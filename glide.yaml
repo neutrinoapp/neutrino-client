@@ -1,0 +1,10 @@
+package: github.com/neutrinoapp/neutrino-client
+import:
+- package: github.com/gngeorgiev/gowamp
+- package: github.com/nats-io/nats
+- package: github.com/neutrinoapp/neutrino
+  subpackages:
+  - src/common/config
+  - src/common/log
+  - src/common/models
+- package: gopkg.in/redis.v3
