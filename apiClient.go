@@ -259,6 +259,15 @@ func (c *ApiClient) DeleteItem(t, id string) (map[string]interface{}, error) {
 	return res.(map[string]interface{}), err
 }
 
+func (c *ApiClient) GetCollections() ([]string, error) {
+	res, err := c.SendRequest("app/"+c.AppId+"/data", "GET", nil, false)
+	if res == nil {
+		return nil, err
+	}
+
+	return res.([]string), err
+}
+
 func (c *ApiClient) GetItem(t, id string) (map[string]interface{}, error) {
 	res, err := c.SendRequest("app/"+c.AppId+"/data/"+t+"/"+id, "GET", nil, false)
 	if res == nil {
